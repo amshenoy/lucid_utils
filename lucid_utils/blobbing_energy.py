@@ -31,8 +31,9 @@ class BlobFinder:
         close_region = self.circle((x, y))
         for (x1, y1) in close_region:
             if self.frame[x1][y1] > 0:
+                c1 = self.frame[x1][y1]
                 self.frame[x1][y1] = 0
-                self.aq.put((x1, y1, c))
+                self.aq.put((x1, y1, c1))
 
     def find(self):
         for x in range(256):
